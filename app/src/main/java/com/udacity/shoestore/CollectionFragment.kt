@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.ActivityNavigatorExtras
@@ -19,44 +20,32 @@ import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_collection.*
 import kotlinx.android.synthetic.main.fragment_collection.view.*
 
-class CollectionFragment : Fragment() {
+class CollectionFragment : Fragment()  {
 
-    private lateinit var binding : FragmentCollectionBinding
     @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        super.onCreateView(inflater, container, savedInstanceState)
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate<FragmentCollectionBinding>(inflater, R.layout.fragment_collection, container, false)
+       val binding = DataBindingUtil.inflate<FragmentCollectionBinding>(inflater, R.layout.fragment_collection, container, false)
 
-       // val application = requireNotNull(this.activity).application
-         //   val arguments = CollectionFragmentArgs.fromBundle(arguments!!)
-           // Toast.makeText(context, "{${arguments.shoeItem?.name}}", Toast.LENGTH_LONG).show()
-           // val viewModelFactory = CollectionViewModelFactory(arguments.shoeItem!!, application)
-           /*model.shoesString.observe(viewLifecycleOwner, Observer {
-               binding.shoeDetails.text = it
-           })*/
+        val application = requireNotNull(this.activity).application
+
+        val viewModelFactory = DetailViewModelFactory(application)
 
         binding.lifecycleOwner = this
+
+        val model=ViewModelProvider(this, viewModelFactory).get(DetailViewModel::class.java)
+
+        binding.shoeDetails.text = model.shoesString.toString()
 
         binding.fab.setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.action_collectionFragment_to_detailFragment)
         )
         return binding.root
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        val application = requireNotNull(this.activity).application
-        val viewModelFactory = DetailViewModelFactory(application)
-        val model=ViewModelProvider(this, viewModelFactory).get(DetailViewModel::class.java)
-        model.shoesString.observe(viewLifecycleOwner, Observer {
-            str->
-                binding.shoeDetails.text= str
-        })
-        binding.viewModel=model
-    }
 
 }

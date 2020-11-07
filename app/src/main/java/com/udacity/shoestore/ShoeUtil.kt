@@ -8,7 +8,7 @@ import android.text.SpannedString
 import androidx.core.text.HtmlCompat
 import com.udacity.shoestore.models.Shoe
 
-fun formatShoeDetail(shoes: MutableList<Shoe>, resources: Resources): Spanned {
+fun formatShoeDetail(shoes: List<Shoe>, resources: Resources): Spanned {
     val sb = StringBuilder()
     sb.apply {
         append(resources.getString(R.string.title))
