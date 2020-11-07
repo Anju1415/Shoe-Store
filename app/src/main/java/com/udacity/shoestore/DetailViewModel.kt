@@ -1,58 +1,49 @@
 package com.udacity.shoestore
 
+import android.app.Activity
+import android.app.Application
 import androidx.lifecycle.*
 import com.udacity.shoestore.models.Shoe
 
-class DetailViewModel(state : SavedStateHandle):ViewModel() {
+class DetailViewModel(application: Application): ViewModel() {
 
-    // Keep the key as a constant
-    companion object {
-        private val NAME = "shoeName"
-        private val COMPANY="companyName"
-        private val SIZE="shoeSize"
-        private val DESCRIPTION="shoeDescription"
-    }
-
-
-    private val savedStateHandle = state
-
-    private val _name :MutableLiveData<String> = savedStateHandle.getLiveData(NAME)
-    val name: LiveData<String>
-        get() = _name
-
-    private val _company:MutableLiveData<String> =savedStateHandle.getLiveData(COMPANY)
-    val company:LiveData<String>
-    get()=_company
-
-
-    private val _size:MutableLiveData<String> = savedStateHandle.getLiveData(SIZE)
-    val size:LiveData<String>
-        get()=_size
-
-    private val _description: MutableLiveData<String> = savedStateHandle.getLiveData(DESCRIPTION)
-    val description:LiveData<String>
-        get()=_description
-
-
-    private var _navigateToShoeCollection = MutableLiveData<Shoe>()
-    val navigateToShoeCollection: LiveData<Shoe>
+    private var _navigateToShoeCollection = MutableLiveData<Boolean>()
+    val navigateToShoeCollection: LiveData<Boolean>
         get() = _navigateToShoeCollection
 
-    fun doneNavigating(){
-        _navigateToShoeCollection.value = null
+    fun navigateToShoeCollections(){
+        _navigateToShoeCollection.value = false
     }
 
-    fun saveCurrentDetail( detail:Shoe) {
+    private val _shoes= MutableLiveData<MutableList<Shoe>>()
+    private val shoes : LiveData<MutableList<Shoe>>
+        get() = _shoes
 
+/*
+    private val list :MutableList<Shoe> = mutableListOf()
+    init {
+        _shoes.value=list
+    }
+*/
+
+
+     fun saveCurrentDetail(detail:Shoe?) {
         // Sets a new value for the object associated to the key.
-        savedStateHandle.set(NAME,detail.name)
+       /* savedStateHandle.set(NAME,detail.name)
         savedStateHandle.set(COMPANY,detail.company)
         savedStateHandle.set(SIZE,detail.size)
         savedStateHandle.set(DESCRIPTION,detail.description)
+*/
+        //val shoe  = Shoe(detail.name, detail.size, detail.company, detail.description)
+      //  list.add(detail)
 
-        val shoe  = Shoe(NAME, SIZE, COMPANY, DESCRIPTION)
-        _navigateToShoeCollection.value=shoe
+         _shoes.value?.add(detail!!)
+        _navigateToShoeCollection.value=true
 
+    }
+
+    val shoesString = Transformations.map(shoes) { shoes ->
+        formatShoeDetail(shoes, application.resources)
     }
 
 

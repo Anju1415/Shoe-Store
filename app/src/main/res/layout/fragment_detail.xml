@@ -73,7 +73,8 @@
                 <EditText
                     android:id="@+id/shoeName"
                     style="@style/entershoedetail"
-                    android:hint="Shoe Name"/>
+                    android:hint="Shoe name"
+                    />
 
 
             </LinearLayout>
@@ -139,7 +140,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Shoe Description" />
+            android:hint="Shoe Description" />
     </LinearLayout>
 
     <Button
@@ -162,7 +163,6 @@
         android:layout_marginBottom="8dp"
         android:text="save"
         android:textColor="#fff"
-        android:onClick="@{() -> viewModel.saveCurrentDetail(shoeDetail)}"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent" />

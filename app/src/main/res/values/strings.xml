@@ -4,9 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="email">Email</string>
 
+    <string name="instruction1">1. Tab + icon to add new shoe item to the collection</string>
+    <string name="instruction2">2. Tab save button to save item</string>
 
     <!-- Output to TextView styled with a little HTML -->
-    <string name="title"><![CDATA[<h3>HERE IS YOUR SLEEP DATA</h3>]]></string>
+    <string name="title"><![CDATA[<h3> HERE IS COLLECTION OF SHOES </h3>]]></string>
     <string name="shoe_name"><![CDATA[<b>Shoe Name:</b>]]></string>
     <string name="company_name"><![CDATA[<b>Company:</b>]]></string>
     <string name="shoe_size"><![CDATA[<b>Size:</b>]]></string>

@@ -4,6 +4,7 @@ import android.content.res.Resources
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
+import android.text.SpannedString
 import androidx.core.text.HtmlCompat
 import com.udacity.shoestore.models.Shoe
 
