@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Shoedetail"
+                android:text="Shoe Name :" />
+
+            <TextView
+                android:id="@+id/shoe_name"
+                style="@style/entershoedetail"
+                android:hint="Shoe name"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Shoedetail"
+                android:text="Company Name :" />
+
+            <TextView
+                android:id="@+id/company_name"
+                style="@style/entershoedetail"
+                android:hint="Company Name"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Shoedetail"
+                android:text="Shoe Size :" />
+
+            <TextView
+                android:id="@+id/shoe_size"
+                style="@style/entershoedetail"
+                android:hint="Shoe Size"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Shoedetail"
+            android:text="Description:" />
+
+        <TextView
+            android:id="@+id/shoe_description"
+            style="@style/entershoedetail"
+            android:hint="Shoe Size"/>
+
+    </LinearLayout>
+
+    </LinearLayout>

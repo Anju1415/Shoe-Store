@@ -1,24 +1,18 @@
 package com.udacity.shoestore
 
-
-import android.app.Application
 import androidx.lifecycle.*
 import com.udacity.shoestore.models.Shoe
 
-class DetailViewModel(application: Application): ViewModel() {
+class DetailViewModel: ViewModel() {
 
-    private val _shoes= MutableLiveData<List<Shoe>>()
-    private val shoes : LiveData<List<Shoe>>
+    private val _shoes = MutableLiveData<MutableList<Shoe>>(mutableListOf())
+    val shoes: LiveData<MutableList<Shoe>>
         get() = _shoes
 
-    private val list = mutableListOf<Shoe>()
-     fun saveCurrentDetail(detail:Shoe?) {
-         list.add(detail!!)
-         _shoes.value=list
-    }
-
-    var shoesString = Transformations.map(shoes) { shoes ->
-        formatShoeDetail(shoes, application.resources)
+    fun saveCurrentDetail(detail: Shoe?) {
+        detail?.let {
+            _shoes.value?.add(it)
+        }
     }
 
 

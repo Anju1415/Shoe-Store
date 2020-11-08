@@ -21,7 +21,6 @@
     android:layout_height="match_parent"
     tools:context=".DetailFragment">
 
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
@@ -62,7 +61,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -80,7 +79,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -96,7 +95,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -107,15 +106,15 @@
                 <EditText
                     android:id="@+id/shoeSize"
                     style="@style/entershoedetail"
-                    android:hint="Shoe Size"/>
+                    android:hint="Shoe Size" />
 
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="416dp"
-        android:layout_height="365dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
@@ -141,6 +140,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Shoe Description" />
+
     </LinearLayout>
 
     <Button
