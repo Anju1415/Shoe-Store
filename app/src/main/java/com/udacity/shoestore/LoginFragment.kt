@@ -1,6 +1,8 @@
 package com.udacity.shoestore
 
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
@@ -16,35 +18,35 @@ class LoginFragment : Fragment() {
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater, R.layout.fragment_login, container, false)
-        binding.apply{
-            user?.email=email_edt_text?.text.toString()
-            user?.password=pass_edt_text?.text.toString()
+        binding.apply {
+            user?.email = email_edt_text?.text.toString()
+            user?.password = pass_edt_text?.text.toString()
             invalidateAll()
+        }
+        binding.hideBtn.setOnClickListener {
+            binding.hideBtn.visibility = View.INVISIBLE
+            binding.showBtn.visibility = View.VISIBLE
+            pass_edt_text.transformationMethod = HideReturnsTransformationMethod.getInstance()
+
+        }
+        binding.showBtn.setOnClickListener {
+            binding.showBtn.visibility = View.INVISIBLE
+            binding.hideBtn.visibility = View.VISIBLE
+            pass_edt_text.transformationMethod = PasswordTransformationMethod.getInstance()
         }
 
         binding.loginBtn.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeFragment))
+                Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeFragment))
         binding.newAccountBtn.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeFragment))
-        setHasOptionsMenu(true)
+                Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeFragment))
         return binding.root
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.logout_menu, menu)
-    }
-
-    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item!!,
-            view!!.findNavController())
-                || super.onOptionsItemSelected(item)
-    }*/
 
 }

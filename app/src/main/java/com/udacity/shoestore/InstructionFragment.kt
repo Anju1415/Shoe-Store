@@ -13,13 +13,13 @@ import com.udacity.shoestore.databinding.FragmentLoginBinding
 class InstructionFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentInstructionBinding>(inflater, R.layout.fragment_instruction, container, false)
         binding.grabShoe.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_instructionFragment_to_collectionFragment))
+                Navigation.createNavigateOnClickListener(R.id.action_instructionFragment_to_collectionFragment))
         return binding.root
     }
 

@@ -12,13 +12,13 @@ import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentWelcomeBinding>(inflater, R.layout.fragment_welcome, container, false)
         binding.next.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_welcomeFragment_to_instructionFragment))
+                Navigation.createNavigateOnClickListener(R.id.action_welcomeFragment_to_instructionFragment))
         return binding.root
     }
 

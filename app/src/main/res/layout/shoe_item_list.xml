@@ -1,60 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:orientation="vertical">
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Shoedetail"
-                android:text="Shoe Name :" />
-
-            <TextView
-                android:id="@+id/shoe_name"
-                style="@style/entershoedetail"
-                android:hint="Shoe name"
-                />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Shoedetail"
-                android:text="Company Name :" />
-
-            <TextView
-                android:id="@+id/company_name"
-                style="@style/entershoedetail"
-                android:hint="Company Name"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Shoedetail"
-                android:text="Shoe Size :" />
-
-            <TextView
-                android:id="@+id/shoe_size"
-                style="@style/entershoedetail"
-                android:hint="Shoe Size"/>
-
-        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,14 +12,63 @@
         android:orientation="horizontal">
 
         <TextView
-            style="@style/Shoedetail"
-            android:text="Description:" />
+            style="@style/shoeDetailStyle"
+            android:text="@string/shoeName" />
+
+        <TextView
+            android:id="@+id/shoe_name"
+            style="@style/enterShoeDetail"
+            android:hint="@string/s_n" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/shoeDetailStyle"
+            android:text="@string/companyName" />
+
+        <TextView
+            android:id="@+id/company_name"
+            style="@style/enterShoeDetail"
+            android:hint="@string/c_n" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/shoeDetailStyle"
+            android:text="@string/shoeSize" />
+
+        <TextView
+            android:id="@+id/shoe_size"
+            style="@style/enterShoeDetail"
+            android:hint="@string/s_s" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/shoeDetailStyle"
+            android:text="@string/description" />
 
         <TextView
             android:id="@+id/shoe_description"
-            style="@style/entershoedetail"
-            android:hint="Shoe Size"/>
+            style="@style/enterShoeDetail"
+            android:hint="@s_d" />
 
     </LinearLayout>
 
-    </LinearLayout>
+</LinearLayout>

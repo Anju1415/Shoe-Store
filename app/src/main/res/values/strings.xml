@@ -6,11 +6,17 @@
 
     <string name="instruction1">1. Tab + icon to add new shoe item to the collection</string>
     <string name="instruction2">2. Tab save button to save item</string>
-
-    <!-- Output to TextView styled with a little HTML -->
-    <string name="title"><![CDATA[<h3> HERE IS COLLECTION OF SHOES </h3>]]></string>
-    <string name="shoe_name"><![CDATA[<b>Shoe Name:</b>]]></string>
-    <string name="company_name"><![CDATA[<b>Company:</b>]]></string>
-    <string name="shoe_size"><![CDATA[<b>Size:</b>]]></string>
-    <string name="shoe_description"><![CDATA[<b>Description:</b>]]></string>
+    <string name="shoes_collection">SHOES COLLECTION</string>
+    <string name="add_item">add item</string>
+    <string name="shoeName">Shoe Name :</string>
+    <string name="companyName">Company Name :</string>
+    <string name="description">Description :</string>
+    <string name="shoeSize">Shoe Size :</string>
+    <string name="s_n">Shoe Name</string>
+    <string name="c_n">Company Name</string>
+    <string name="s_d">Description</string>
+    <string name="s_s">Shoe Size </string>
+    <string name="collectionTitle">Shoes Collection</string>
+    <string name="addShoesDetail">Shoes Detail</string>
+    <string name="add_shoe_details">Add Shoe Details</string>
 </resources>
